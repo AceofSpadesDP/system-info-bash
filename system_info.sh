@@ -4,7 +4,6 @@ hostname=$(hostname)
 
 os=$(lsb_release -d | cut -f2)
 
-# Uptime
 uptime=$(uptime -p)
 
 kernel=$(uname -r)
