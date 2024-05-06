@@ -31,6 +31,12 @@ echo "Memory Information:" >> "$output_file"
 echo "$mem_info" >> "$output_file"
 echo "" >> "$output_file"
 
+# Manufacturer, Product Name, Version, Serial Number
+echo "Hardware Information:" >> "$output_file"
+echo "---------------------" >> "$output_file"
+dmidecode -t system | grep -E 'Manufacturer:|Product Name:|Version:|Serial Number:' >> "$output_file"
+echo "" >> "$output_file"
+
 # IP information
 echo "IP Information:" >> "$output_file"
 echo "-----------------" >> "$output_file"
@@ -50,3 +56,4 @@ grep -i "error" /var/log/syslog | tail -n 5 >> "$output_file"
 echo "" >> "$output_file"
 
 echo "System information has been collected and saved to $output_file"
+
