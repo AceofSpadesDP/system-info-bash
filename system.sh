@@ -24,6 +24,12 @@ kernel=$(uname -r)
 echo "Linux Kernel Version: $kernel" >> "$output_file"
 echo "---------------------" >> "$output_file"
 
+# Manufacturer, Product Name, Version, Serial Number
+echo "Hardware Information:" >> "$output_file"
+echo "---------------------" >> "$output_file"
+dmidecode -t system | grep -E 'Manufacturer:|Product Name:|Version:|Serial Number:' >> "$output_file"
+echo "" >> "$output_file"
+
 # General CPU information
 cpu_info=$(lscpu)
 echo "CPU Information:" >> "$output_file"
@@ -36,12 +42,6 @@ mem_info=$(free -h)
 echo "Memory Information:" >> "$output_file"
 echo "---------------------" >> "$output_file"
 echo "$mem_info" >> "$output_file"
-echo "" >> "$output_file"
-
-# Manufacturer, Product Name, Version, Serial Number
-echo "Hardware Information:" >> "$output_file"
-echo "---------------------" >> "$output_file"
-dmidecode -t system | grep -E 'Manufacturer:|Product Name:|Version:|Serial Number:' >> "$output_file"
 echo "" >> "$output_file"
 
 # IP information
