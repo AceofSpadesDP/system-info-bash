@@ -2,22 +2,27 @@
 
 # Output file
 output_file="system_info.txt"
+echo "---------------------" >> "$output_file"
 
 # System Hostname
 hostname=$(hostname)
 echo "System Hostname: $hostname" > "$output_file"
+echo "---------------------" >> "$output_file"
 
 # Operating System
 os=$(lsb_release -d | awk -F"\t" '{print $2}')
 echo "Operating System: $os" >> "$output_file"
+echo "---------------------" >> "$output_file"
 
 # Uptime
 uptime=$(uptime -p)
 echo "System Uptime: $uptime" >> "$output_file"
+echo "---------------------" >> "$output_file"
 
 # Linux Kernel Version
 kernel=$(uname -r)
 echo "Linux Kernel Version: $kernel" >> "$output_file"
+echo "---------------------" >> "$output_file"
 
 # General CPU information
 cpu_info=$(lscpu)
