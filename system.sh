@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "---------------------" >> "$output_file"
+
 # Output file
 output_file="system_info.txt"
 echo "---------------------" >> "$output_file"
