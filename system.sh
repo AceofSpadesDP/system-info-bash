@@ -22,12 +22,14 @@ echo "Linux Kernel Version: $kernel" >> "$output_file"
 # General CPU information
 cpu_info=$(lscpu)
 echo "CPU Information:" >> "$output_file"
+echo "---------------------" >> "$output_file"
 echo "$cpu_info" >> "$output_file"
 echo "" >> "$output_file"
 
 # General memory information
 mem_info=$(free -h)
 echo "Memory Information:" >> "$output_file"
+echo "---------------------" >> "$output_file"
 echo "$mem_info" >> "$output_file"
 echo "" >> "$output_file"
 
