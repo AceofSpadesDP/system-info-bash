@@ -27,8 +27,8 @@ get_error_logs() {
     echo "" >> "$output_file"
 }
 
-# Main function
-main() {
+# Function to gather system information
+gather_system_info() {
     # System Hostname
     hostname=$(hostname)
     echo "System Hostname: $hostname" > "$output_file"
@@ -69,5 +69,4 @@ main() {
     echo "System information has been collected and saved to $output_file"
 }
 
-# Run main function
-main
+
